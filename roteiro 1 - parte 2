@@ -1,0 +1,29 @@
+Parte 2: Módulo grafo_matriz.py (Matriz de Adjacência)
+Fundamentação Teórica: A matriz de adjacência é uma matriz quadrada M de tamanho V x V, onde V é o número de vértices do grafo. Se M[i][j] = 1, significa que existe uma aresta entre o vértice i e o vértice j. Se for 0, não há aresta. Para grafos não-direcionados, a matriz é simétrica (M[i][j] = M[j][i]).
+Estrutura de Dados Proposta: Para representar o grafo, você deve usar um dicionário. Este dicionário deve conter duas chaves:
+"num_vertices": Um inteiro que armazena a quantidade de vértices no grafo.
+"matriz": Uma lista de listas que representa a matriz de adjacência V x V.
+Tarefa 1: Criação do Módulo e Funções Básicas
+Crie um novo arquivo chamado grafo_matriz.py. Nele, você deve implementar as seguintes funções, seguindo as descrições:
+cria_grafo(num_vertices)
+Descrição: Esta função deve criar a estrutura de dados inicial do grafo. Ela recebe o número de vértices como parâmetro. Dentro da função, você deve inicializar uma matriz V x V preenchida com zeros. A função deve retornar o dicionário que representa o grafo (contendo o número de vértices e a matriz zerada). Valide se num_vertices é um valor positivo.
+adiciona_aresta(grafo, v1, v2)
+Descrição: Esta função modifica o grafo para adicionar uma aresta entre dois vértices, v1 e v2. Lembre-se que, para um grafo não-direcionado, a matriz de adjacência é simétrica. Portanto, você deve atualizar a posição (v1, v2) e também a (v2, v1) para 1. É importante validar se os vértices v1 e v2 são válidos (ou seja, estão dentro do intervalo de vértices do grafo).
+remove_aresta(grafo, v1, v2)
+Descrição: Similar à função anterior, mas esta deve remover a aresta entre v1 e v2, alterando os valores correspondentes na matriz para 0. A simetria da matriz também deve ser mantida.
+exibe_matriz(grafo)
+Descrição: Crie uma função que imprima a matriz de adjacência do grafo de uma forma clara e legível no terminal, linha por linha.
+Tarefa 2: Funções de Análise do Grafo
+Continue no mesmo arquivo grafo_matriz.py e adicione as seguintes funções de consulta:
+tem_aresta(grafo, v1, v2)
+Descrição: Esta função deve verificar e retornar um valor booleano (True ou False) indicando se existe uma aresta entre os vértices v1 e v2. A verificação é uma simples consulta na matriz.
+grau_do_vertice(grafo, vertice)
+Descrição: A função deve calcular e retornar o grau de um vertice específico. O grau de um vértice em uma matriz de adjacência é a soma de todos os valores na linha (ou coluna) correspondente a esse vértice.
+Tarefa 3: Testando o Módulo
+Crie um arquivo separado chamado teste_matriz.py. Neste arquivo, importe as funções do seu módulo grafo_matriz e escreva um script que:
+Crie um grafo com 5 vértices.
+Adicione um conjunto de arestas para formar um grafo de sua escolha.
+Exiba a matriz resultante.
+Teste a função tem_aresta para um par de vértices que possui uma aresta e para um par que não possui.
+Calcule e imprima o grau de todos os vértices do grafo.
+Remova uma das arestas e exiba a matriz novamente para confirmar a remoção.
